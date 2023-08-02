@@ -1,0 +1,100 @@
+#white {
+    position: relative;
+    justify-content: center;
+    /* align-items: center; */
+    display: flex;
+    left: 30vw;
+    top: 10vh;
+    z-index: 999;
+    width: 40vw;
+    height: 80vh;
+    background-color: white;
+    border-radius: 20px;
+    transition: left 0.3s ease;
+    transition: transform 0.3s ease, width 0.3s ease, height 0.3s ease;
+}
+
+
+#bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    /* clip-path: polygon(30% 30%, 60% 30%, 60% 60%, 30% 60%, round 10px);  */
+    clip-path: inset(100% 100% 100% 100% round 10px);
+    object-fit: cover;
+    z-index: 998;
+
+    transition: clip-path 0.3s ease;
+}
+
+.panel {
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    padding-top: 30px;
+    justify-content: space-evenly;
+}
+
+h2 {
+    color: blueviolet;
+    text-align: center;
+
+    /* margin-bottom: 35%; */
+}
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+}
+
+form {
+    /* background-color: blue; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+form > * {
+    margin-top: 20px;
+}
+
+.input-field {
+    color: black;
+    border: 2px solid blueviolet;
+    border-radius: 5px;
+    font-size: larger;
+    outline: none;
+}
+
+.input-container{
+    width: 100%;
+    /* display: flex; */
+}
+
+#login-button {
+    margin-top: 100px;
+    border-radius: 5px;
+    color: blueviolet;
+    border: 3px solid blueviolet;
+    outline: none;
+    font-size: 24px;
+    width: 40%;
+    background-color: transparent;
+    transition:  color 0.3s ease;
+}
+
+#login-button:hover {
+    background-color: blueviolet;
+    color: white;
+}
+
+.changePage {
+    margin-top: 10px;
+    outline: none;
+    border: none;
+    color: blueviolet;
+    background-color: transparent;
+}

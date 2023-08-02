@@ -1,0 +1,6 @@
+<app-bill-page *ngIf="currentBill !== -1"></app-bill-page>
+<div class="list-bill" *ngIf="currentBill === -1">
+    <div class="scrolable">
+        <app-bill-item (onBillItemClicked)="onBillItem($event)" *ngFor="let bill of bills; let i = index" [id]="i" [name]="bill.name" [author]="bill.author" [amount]="bill.amount" [description]="bill.description"></app-bill-item>
+    </div>
+</div>

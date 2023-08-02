@@ -1,0 +1,19 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200&display=swap" rel="stylesheet">
+
+<div class="wrapper">
+    <button id="reset-page" (click)="resetPage()">Pumpkin Bis</button>
+    <nav id="nav-bar">
+        <button class="change-page-button" (click)="onChangePageButton(1)" [class.actif]="currentPage === 1">Home</button>
+        <button class="change-page-button" (click)="onChangePageButton(2)" [class.actif]="currentPage === 2">Create Bill</button>
+        <button class="change-page-button" (click)="onChangePageButton(3)" [class.actif]="currentPage === 3">Add contact</button>
+        <button class="change-page-button" (click)="onChangePageButton(4)" [class.actif]="currentPage === 4">Profile</button>
+        <!-- <a href="https://www.flaticon.com/free-icons/notification" title="notification icons">Notification icons created by CreativeCons - Flaticon</a> -->
+        <div>
+            <button id="openNotificationButton" (click)="openNotificationPanel()">
+                <span id="notification-number"></span>
+            </button>
+        </div>
+    </nav>
+</div>

@@ -1,0 +1,136 @@
+<div id="white">
+    <div class="panel">
+        <h2 class="site-name">Nom du site</h2>
+        <div *ngIf="isLoggingPage" class="form-container">
+            <form novalidate (ngSubmit)="login()" [formGroup]="loginForm">
+                <div class="form-row input-container">
+                    <input 
+                        type="email" 
+                        class="input-field form-control" 
+                        placeholder="email"
+                        formControlName="email"
+                        [ngClass]="{
+                            'is-invalid': loginForm.get('email')?.touched && !loginForm.get('email')?.valid
+                        }">
+                    <div class="invalid-feedback">
+                        <span *ngIf="loginForm.get('email')?.errors?.['required']">
+                            Entrez votre adresse email
+                        </span>
+                        <span *ngIf="loginForm.get('email')?.errors?.['email']">
+                            email invalide
+                        </span>
+                    </div>
+                </div>
+                <div class="form-row input-container">
+                    <input 
+                        type="password" 
+                        class="input-field form-control" 
+                        placeholder="mot de passe"
+                        formControlName="password"
+                        [ngClass]="{
+                            'is-invalid': loginForm.get('password')?.touched && !loginForm.get('password')?.valid
+                        }">
+                    <div class="invalid-feedback">
+                        <span *ngIf="loginForm.get('password')?.errors?.['required'] && loginForm.get('password')?.touched">
+                            Entrez votre mot de passe
+                        </span>
+                        <span *ngIf="loginForm.get('password')?.errors?.['minlength'] || loginForm.get('password')?.errors?.['maxlength']">
+                            Entre 8 et 16 charactères
+                        </span>
+                    </div>
+                </div>
+                <button type="submit" id="login-button" >connexion</button>
+            </form>
+            <button class="changePage" (click)="GoToRegister()">Créer un compte</button>
+        </div>
+
+        <div *ngIf="!isLoggingPage" class="form-container">
+            <form novalidate (ngSubmit)="register()" [formGroup]="registerForm">
+                <div class="form-row input-container">
+                    <input 
+                        type="text"
+                        class="input-field form-control" 
+                        placeholder="nom d'utilisateur"
+                        formControlName="username"
+                        [ngClass]="{
+                            'is-invalid': registerForm.get('username')?.touched && !registerForm.get('username')?.valid
+                        }">
+                        <div class="invalid-feedback">
+                            <span *ngIf="registerForm.get('username')?.errors?.['required'] && registerForm.get('username')?.touched">
+                                Entrez votre nom d'utilisateur
+                            </span>
+                        </div>
+                </div>
+                <div class="form-row input-container">
+                    <input 
+                        type="text" 
+                        class="input-field form-control" 
+                        placeholder="email" 
+                        formControlName="email"
+                        [ngClass]="{
+                            'is-invalid': registerForm.get('email')?.touched && !registerForm.get('email')?.valid
+                        }">
+                        <div class="invalid-feedback">
+                            <span *ngIf="registerForm.get('email')?.errors?.['required']">
+                                Entrez votre adresse email
+                            </span>
+                            <span *ngIf="registerForm.get('email')?.errors?.['email']">
+                                email invalide
+                            </span>
+                        </div>
+                </div>
+
+
+                <div class="form-row input-container">
+                    <input 
+                        type="tel" 
+                        class="input-field form-control" 
+                        placeholder="numéro de téléphone" 
+                        formControlName="telephone"
+                        [ngClass]="{
+                            'is-invalid': registerForm.get('telephone')?.touched && !registerForm.get('telephone')?.valid
+                        }">
+                </div>
+                <div class="form-row input-container">
+                    <input 
+                        type="password"
+                        class="input-field form-control" 
+                        placeholder="mot de passe" 
+                        formControlName="password"
+                        [ngClass]="{
+                            'is-invalid': registerForm.get('password')?.touched && !registerForm.get('password')?.valid
+                        }">
+                    <div class="invalid-feedback">
+                        <span *ngIf="registerForm.get('password')?.errors?.['required'] && registerForm.get('password')?.touched">
+                            Entrez votre mot de passe
+                        </span>
+                        <span *ngIf="registerForm.get('password')?.errors?.['minlength'] || registerForm.get('password')?.errors?.['maxlength']">
+                            Entre 8 et 16 charactères
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-row input-container">
+                    <input 
+                        type="password" 
+                        class="input-field form-control" 
+                        placeholder="confirmer mot de passe" 
+                        formControlName="confirmPassword"
+                        [ngClass]="{
+                            'is-invalid': registerForm.get('confirmPassword')?.touched && (!registerForm.get('confirmPassword')?.valid || registerForm.get('password')?.value !== registerForm.get('confirmPassword')?.value)
+                        }">
+                        <div class="invalid-feedback">
+                            <span *ngIf="registerForm.get('password')?.value !== registerForm.get('confirmPassword')?.value">
+                                mot de passe différent
+                            </span>
+                        </div>
+                </div>
+                <button type="submit" id="login-button">Créer un compte</button>
+            </form>
+            <button class="changePage" (click)="GoToLogging()">Déjà un compte</button>
+        </div>
+    </div>
+</div>
+
+<img id="bg" src="../assets/images/background-image.jpg" alt="">
+<!-- <img id="bgBis" src="../assets/images/background-image.jpg" alt=""> -->

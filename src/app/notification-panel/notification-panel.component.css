@@ -1,0 +1,29 @@
+#header {
+    display: flex;
+    justify-content:space-between;
+    text-align: center;
+    align-items: center;
+    /* background-color: red; */
+}
+
+#header button {
+    /* position: relative; */
+    background-color: rgba(255, 255, 255, 0.13);
+    background-image: url("/assets/images/right-arrow.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    border-radius: 10px;
+    /* top: 5px; */
+    /* left: 10px; */
+
+    width: 2vw;
+    height: 2vw;
+
+    outline: none;
+    border: none;
+}
+
+.item {
+    width: 100%;
+}

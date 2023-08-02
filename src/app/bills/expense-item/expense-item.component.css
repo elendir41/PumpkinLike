@@ -1,0 +1,38 @@
+* {
+    font-family: 'Poppins';
+
+}
+
+.container {
+    /* background-color: #D9D9D9; */
+    background-color: white;
+    padding: 0 30px;
+
+    transition: background-color 0.3s ease;
+}
+
+.container:hover {
+    /* background-color: #818181; */
+    background-color: #D9D9D9;
+}
+
+.line {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.line h1 {
+    background-clip: text;
+    -webkit-background-clip: text; /* Préfixe pour les anciennes versions de navigateurs WebKit */
+    color: transparent;
+    /* Dégradé linéaire */
+    background-image: linear-gradient(to right, #4D9CFB, #660FF2);
+    font-size: 50px;
+
+    margin-top: 10px;
+}
+
+.line h3 {
+    color: #505357;
+}

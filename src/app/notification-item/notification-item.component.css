@@ -1,0 +1,28 @@
+.item {
+    background-color: blueviolet;
+    margin: 10px;
+    padding: 10px;
+}
+
+.firstLine {
+    display: flex;
+    justify-items: center;
+    text-align: center;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.delete {
+    background-color: red;
+    background-image: url("/assets/images/delete.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    
+    height: 40px;
+    width: 40px;
+}

@@ -1,0 +1,37 @@
+header {
+    /* position: absolute; */
+    background-color: #09B1D6;
+    width: 100vw;
+    height: 10vh;
+}
+
+app-notification-panel {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+
+    z-index: 999;
+
+    background-color: rgb(98, 17, 161, 0.73);
+    height: 90vh;
+    width: 17vw;
+
+    transition: width 0.3s ease;
+    overflow: hidden;
+}
+
+.main{
+    height: 90vh;
+    display: flex;
+}
+
+.page {
+    /* background-color: #09B1D6; */
+    /* width: 100%; */
+}
+
+app-home-page {
+    display: flex;
+    width: 100vw;
+    height: 90vh;
+}

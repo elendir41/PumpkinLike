@@ -1,0 +1,11 @@
+<div id="panel">
+    <div id="header">
+        <button (click)="closePanel()" >
+        </button>
+        <h2>Notifications</h2>
+        <div class="spacer"></div>
+    </div>
+    <div id="list">
+        <app-notification-item *ngFor="let notification of notifications" [user]="notification.user" [message]="notification.message"></app-notification-item>
+    </div>
+</div>
