@@ -1,18 +1,28 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { AuthService } from './services/auth.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnInit{
+
+  constructor(private authService: AuthService) { }
+
   title = 'pumpkin-like';
   notificationOpen :number = 17;
   notificationClose :number = 0;
   notificationWidth :Number = this.notificationClose;
 
-  currentPage :number = 0;
+  currentPage :number = 0; 
   currentBill :number = -1;
+
+  ngOnInit() {
+    this.authService.onUserLoggedIn().subscribe(() => {
+      this.currentPage = 1;
+    })
+  }
 
   toggleNotificationPanel() {
     this.notificationWidth = this.notificationWidth == this.notificationOpen ? this.notificationClose : this.notificationOpen;

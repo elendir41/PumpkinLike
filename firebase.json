@@ -1,0 +1,9 @@
+{
+  "hosting": [
+    {
+      "target": "pumpkin-like",
+      "source": ".",
+      "frameworksBackend": {}
+    }
+  ]
+}

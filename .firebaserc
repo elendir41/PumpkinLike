@@ -1,0 +1,16 @@
+{
+  "projects": {
+    "default": "soustrouille-d5559",
+    "soutrouille": "soustrouille-d5559"
+  },
+  "targets": {
+    "soustrouille-d5559": {
+      "hosting": {
+        "pumpkin-like": [
+          "soustrouille-d5559"
+        ]
+      }
+    }
+  },
+  "etags": {}
+}
