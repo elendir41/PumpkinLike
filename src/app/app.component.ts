@@ -10,17 +10,18 @@ export class AppComponent implements OnInit{
 
   constructor(private authService: AuthService) { }
 
-  title = 'pumpkin-like';
+  title = 'Soutrouille';
   notificationOpen :number = 17;
   notificationClose :number = 0;
   notificationWidth :Number = this.notificationClose;
 
   currentPage :number = 0; 
-  currentBill :number = -1;
+  currentBill :string = "";
 
   ngOnInit() {
-    this.authService.onUserLoggedIn().subscribe(() => {
-      this.currentPage = 1;
+    this.authService.onUserLoggedIn().subscribe(connected => {
+      if (connected)
+        this.currentPage = 1;
     })
   }
 
@@ -33,7 +34,7 @@ export class AppComponent implements OnInit{
   }
 
   resetPage() {
-    this.currentBill = -1;
+    this.currentBill = "";
     this.currentPage = 1;
     // alert("reset")
   }

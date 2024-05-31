@@ -9,12 +9,13 @@ import { AuthService } from 'src/app/services/auth.service';
   templateUrl: './register-login.component.html',
   styleUrls: ['./register-login.component.css']
 })
-export class RegisterLoginComponent {
+export class RegisterLoginComponent implements OnInit{
   isLoggingPage: boolean = true;
   @Output() connectEvent = new EventEmitter();
 
   public loginForm: FormGroup;
   public registerForm: FormGroup;
+  failToConnect: boolean = false;
 
   constructor(private fb: FormBuilder, private authService: AuthService) {
     this.loginForm = this.fb.group({
@@ -31,6 +32,13 @@ export class RegisterLoginComponent {
     });
   }
 
+  ngOnInit(): void {
+    this.authService.onUserLoggedIn().subscribe(connected => {
+      this.failToConnect = !connected;
+      console.log(`failToConnect: ${this.failToConnect}`);
+      
+    })
+  }
 
   GoToLogging() {
     this.loginForm = this.fb.group({
@@ -52,13 +60,11 @@ export class RegisterLoginComponent {
 
   public login() {
     const value = this.loginForm.value;
-    console.log(value);
     this.authService.login(value.email, value.password)
   }
 
   public register() {
     const value = this.registerForm.value;
-    console.log(value);
     this.authService.register(value.email, value.password, value.username);
   }
 }

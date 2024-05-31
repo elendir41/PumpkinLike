@@ -61,6 +61,11 @@ form > * {
     margin-top: 20px;
 }
 
+.wrong-credential{
+    color: red;
+    align-self:flex-start;
+}
+
 .input-field {
     color: black;
     border: 2px solid blueviolet;

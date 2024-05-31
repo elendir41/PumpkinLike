@@ -1,1 +1,58 @@
-<p>add-contact works!</p>
+<div class="content">
+
+    <div class="panel">
+        <h1>Liste d'amis</h1>
+        <ul>
+            <li class="user" *ngFor="let friend of friends">
+                <div class="user-info">
+                    <span>{{ friend.name }}</span>
+                    <span>{{ friend.email }}</span>
+                </div>
+                <button>Supprimer</button>
+            </li>
+        </ul>
+    </div>
+    <div class="panel">
+        <h1>Rechercher un utilisateur</h1>
+        <div class="search-bar">
+            <input type="text" name="nameToFind" [(ngModel)]="nameToFind" placeholder="Nom d'utilisateur">
+
+            <button (click)="onSearchButton()">x</button>
+        </div>
+    
+        <ul>
+            <li class="user" *ngFor="let foundUser of foundUsers">
+                <div class="user-info">
+                    <span> {{ foundUser.name }}</span>
+                    <span> {{ foundUser.email }}</span>
+                </div>
+                <button (click)="sendInvit(foundUser.uid)">Ajouter en ami</button>
+            </li>
+        </ul>
+    </div>
+
+    <div class="panel">
+        <h1>Demande envoyé</h1>    
+        <ul>
+            <li class="user" *ngFor="let sendUser of sendUsers">
+                <div class="user-info">
+                    <span> {{ sendUser.name }}</span>
+                    <span> {{ sendUser.email }}</span>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+    <div class="panel">
+        <h1>Invitation reçu</h1>    
+        <ul>
+            <li class="user" *ngFor="let receiveInvit of receiveInvits">
+                <div class="user-info">
+                    <span> {{ receiveInvit.name }}</span>
+                    <span> {{ receiveInvit.email }}</span>
+                </div>
+                <button (click)="accept(receiveInvit.uid)">Accepter</button>
+            </li>
+        </ul>
+    </div>
+</div>

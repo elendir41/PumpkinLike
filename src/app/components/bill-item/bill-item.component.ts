@@ -7,12 +7,12 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 })
 export class BillItemComponent {
   @Input() name :string = "";
-  @Input() author :string = "";
+  @Input() creator :string = "";
   @Input() amount :number = -1;
   @Input() description :string = "";
-  @Input() id :number = -1;
+  @Input() id :string = "";
 
-  @Output() onBillItemClicked = new EventEmitter<number>();
+  @Output() onBillItemClicked = new EventEmitter<string>();
 
   billClicked() {
     this.onBillItemClicked.emit(this.id);

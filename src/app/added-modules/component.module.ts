@@ -1,5 +1,6 @@
-import { NgModule } from '@angular/core';
+import { NgModule, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 import { NavBarComponent } from '../components/nav-bar/nav-bar.component';
 import { NotificationPanelComponent } from '../components/notification-panel/notification-panel.component';
@@ -40,6 +41,7 @@ const components = [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
+    FormsModule
   ],
   exports: [ components ]
 })

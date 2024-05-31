@@ -1,1 +1,43 @@
-<p>create-bill works!</p>
+<div id="white">
+    <div class="panel">
+        <h2 class="site-name">Soutrouille</h2>
+        <div class="form-container">
+            <form novalidate (ngSubmit)="create()" [formGroup]="createForm">
+                <div class="form-row input-container">
+                    <input type="text" class="input-field form-control" placeholder="Nom de l'ardoise"
+                        formControlName="name" [ngClass]="{
+                            'is-invalid': createForm.get('name')?.touched && !createForm.get('name')?.valid
+                        }">
+                    <div class="invalid-feedback">
+                        <span *ngIf="createForm.get('name')?.errors?.['required'] && createForm.get('name')?.touched">
+                            Entrez le nom de l'ardoise
+                        </span>
+                    </div>
+                </div>
+                <div class="form-row input-container">
+                    <input type="text" class="input-field form-control" placeholder="Description"
+                        formControlName="description" [ngClass]="{
+                            'is-invalid': createForm.get('description')?.touched && !createForm.get('description')?.valid
+                        }">
+                    <div class="invalid-feedback">
+                        <span *ngIf="createForm.get('description')?.errors?.['required']">
+                            Entrez votre adresse email
+                        </span>
+                        <span *ngIf="createForm.get('description')?.errors?.['description']">
+                            email invalide
+                        </span>
+                    </div>
+                </div>
+                <!-- Ajouter la liste des amis pour les afficher dans les membres potentiel -->
+                <div>
+                    <label for="members">Sélectionnez les membres :</label>
+                        <div formArrayName="members" *ngFor="let member of membersFormArray.controls; let i = index" [formGroupName]="i">
+                            <input type="checkbox" id="{{ friends[i].uid }}" [formControlName]="i">
+                            <label for="{{ friends[i].uid }}">{{ friends[i].name }}</label>
+                        </div>
+                </div>
+                <button type="submit" id="login-button">Créer une ardoise</button>
+            </form>
+        </div>
+    </div>
+</div>
